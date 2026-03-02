@@ -1425,9 +1425,9 @@ export default function IslamWareLandingPro() {
         {/* Giant brand watermark */}
         <div className="relative pt-8 sm:pt-11 pb-8 sm:pb-12 text-center z-10">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[600px] h-[200px] sm:h-[250px] bg-emerald-500/10 blur-[100px] sm:blur-[120px] rounded-full pointer-events-none" />
-          <h2 className="text-[40px] sm:text-[80px] md:text-[120px] lg:text-[140px] font-black tracking-tighter leading-none select-none relative" style={{ WebkitMaskImage: 'linear-gradient(to bottom, transparent 10%, black 50%)' }}>
+          <h2 className="text-[75px] sm:text-[80px] md:text-[120px] lg:text-[140px] font-black tracking-tighter leading-none select-none relative" style={{ WebkitMaskImage: 'linear-gradient(to bottom, transparent 10%, black 50%)' }}>
             <span className="text-slate-300 dark:text-slate-500/40">Islam</span>
-            <span className="text-emerald-400 dark:text-emerald-600 dark:drop-shadow-[0_0_20px_rgba(16,185,129,0.4)]">Ware</span>
+            <span className="text-emerald-400 dark:text-emerald-600 dark:drop-shadow-[0_0_8px_rgba(16,185,129,0.4)]">Ware</span>
           </h2>
         </div>
 
@@ -1548,15 +1548,3 @@ export default function IslamWareLandingPro() {
   );
 }
 
-
-// --- LOGO COMPONENT WITH NEON EFFECT ---
-const IslamWareLogo = () => (
-  <div className="relative flex items-center shrink-0">
-    <svg className="absolute -left-4 w-12 h-12 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.6)]" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <path d="M60,10 A40,40 0 1,0 60,90 A28,28 0 1,1 60,10 Z" fill="currentColor"/>
-    </svg>
-    <span className="text-xl md:text-2xl font-black tracking-widest text-emerald-600 dark:text-emerald-500 drop-shadow-[0_0_5px_rgba(16,185,129,0.5)] z-10 pl-6 uppercase">
-      Islamware
-    </span>
-  </div>
-);
