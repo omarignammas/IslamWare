@@ -266,7 +266,7 @@ export default function IslamWareLandingPro() {
 
       {/* 2. HERO SECTION (Neon & Interactive) */}
       <section ref={heroRef} onMouseMove={handleMouseMove} className="relative min-h-[100dvh] flex flex-col justify-center pt-16 sm:pt-20 pb-8 sm:pb-16 overflow-hidden group">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none mask-gradient-to-b" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000004_1px,transparent_1px),linear-gradient(to_bottom,#00000006_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none mask-gradient-to-b" />
         
         {/* Floating gradient orbs */}
         <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-emerald-500/10 rounded-full blur-[100px] sm:blur-[150px] animate-pulse pointer-events-none" />
@@ -282,14 +282,14 @@ export default function IslamWareLandingPro() {
           </motion.div>
 
           <div className="relative h-[140px] sm:h-[180px] md:h-[200px] mb-4 sm:mb-6 flex flex-col items-center justify-center">
-              <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-3xl sm:text-5xl md:text-7xl font-black text-slate-800 dark:text-white tracking-tighter leading-none mb-2">
+              <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-800 dark:text-white tracking-tighter leading-none mb-2">
                 {t.hero.title}
               </motion.h1>
               <div className="h-[60px] sm:h-[80px] md:h-[100px] relative w-full flex justify-center items-center overflow-hidden">
                   <AnimatePresence mode="wait">
                       <motion.span 
                           key={textIndex} initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -50, opacity: 0 }} transition={{ duration: 0.4, ease: "backOut" }}
-                          className="absolute text-3xl sm:text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-emerald-400 to-teal-500"
+                          className="absolute text-5xl sm:text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-emerald-400 to-teal-500"
                           style={{ filter: isDark ? "drop-shadow(0 0 12px rgba(16, 185, 129, 0.5))" : "none" }}
                       >
                           {phrases[textIndex]}
@@ -349,7 +349,7 @@ export default function IslamWareLandingPro() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-10 sm:mb-14">
             <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-500 mb-4">{lang === 'ar' ? 'لماذا إسلام وير؟' : 'Why IslamWare?'}</motion.p>
-            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-2xl sm:text-3xl md:text-4xl font-black mb-8 text-slate-900 dark:text-white">{lang === 'ar' ? <>النهج الذي يصنع <span className="text-emerald-500 drop-shadow-[0_0_25px_rgba(16,185,129,0.7)]">الفارق</span></> : <>The Approach That Makes a <span className="text-emerald-500 drop-shadow-[0_0_25px_rgba(16,185,129,0.7)]">Difference</span></>}</motion.h2>
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-2xl sm:text-3xl md:text-4xl font-black mb-8 text-slate-900 dark:text-white">{lang === 'ar' ? <>النهج الذي يصنع <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">الفارق</span></> : <>The Approach That Makes a <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">Difference</span></>}</motion.h2>
             
             {/* SaaS Toggle Switch */}
             <div className="inline-flex items-center p-1.5 bg-slate-200/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-full border border-slate-300 dark:border-slate-700 relative z-20 shadow-lg">
@@ -430,7 +430,7 @@ export default function IslamWareLandingPro() {
                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-teal-500/5" />
                      <div className="space-y-6 relative z-10">
                         <div className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-500/10 px-4 py-1.5 rounded-full text-sm border border-emerald-200 dark:border-emerald-800 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                          <Shield className="w-4 h-4 drop-shadow-[0_0_6px_rgba(16,185,129,0.8)]"/> 
+                          <Shield className="w-4 h-4 drop-shadow-[0_0_3px_rgba(16,185,129,0.8)]"/> 
                           <span>{lang === 'ar' ? 'شفافية 100%' : '100% Transparent'}</span>
                         </div>
                         <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">{lang === 'ar' ? 'تطوير أخلاقي ومتقن' : 'Ethical & Controlled Development'}</h3>
@@ -515,7 +515,7 @@ export default function IslamWareLandingPro() {
        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="mb-10 sm:mb-16 md:flex justify-between items-end">
              <div>
-               <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mb-4 drop-shadow-sm">{lang === 'ar' ? <>مجالات <span className="text-emerald-500 drop-shadow-[0_0_25px_rgba(16,185,129,0.7)]">خبرتنا</span></> : <>Our <span className="text-emerald-500 drop-shadow-[0_0_25px_rgba(16,185,129,0.7)]">Expertise</span></>}</motion.h2>
+               <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mb-4 drop-shadow-sm">{lang === 'ar' ? <>مجالات <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">خبرتنا</span></> : <>Our <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">Expertise</span></>}</motion.h2>
                <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-xl">{t.services.desc}</p>
              </div>
           </div>
@@ -527,7 +527,7 @@ export default function IslamWareLandingPro() {
              <motion.div whileHover={{ scale: 0.98 }} className="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-white/5 relative overflow-hidden group hover:border-emerald-500/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition-all duration-500 flex flex-col">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-emerald-500/30 transition-colors" />
                 
-                <Globe className="w-10 h-10 text-emerald-500 mb-6 group-hover:drop-shadow-[0_0_12px_rgba(16,185,129,0.8)] transition-all duration-300" />
+                <Globe className="w-10 h-10 text-emerald-500 mb-6 group-hover:drop-shadow-[0_0_8px_rgba(16,185,129,0.8)] transition-all duration-300" />
                 
                 <h3 className="text-2xl font-bold mb-3 dark:text-white">{t.services.web}</h3>
                 <p className="text-slate-600 dark:text-slate-400 mb-8 flex-1">{t.services.webDesc}</p>
@@ -565,7 +565,7 @@ export default function IslamWareLandingPro() {
 
                 <div className="relative z-10 flex flex-col justify-between h-full">
                    <div>
-                      <Cpu className="w-8 h-8 text-emerald-400 mb-4 group-hover:drop-shadow-[0_0_10px_rgba(52,211,153,0.8)] transition-all" />
+                      <Cpu className="w-8 h-8 text-emerald-400 mb-4 group-hover:drop-shadow-[0_0_8px_rgba(52,211,153,0.8)] transition-all" />
                       <h3 className="text-xl font-bold mb-2 drop-shadow-md">{t.services.ai}</h3>
                       <p className="text-emerald-100/70 text-sm mb-4">{t.services.aiDesc}</p>
                    </div>
@@ -623,7 +623,7 @@ export default function IslamWareLandingPro() {
                 />
 
                 <div className="flex items-center gap-6 relative z-10">
-                   <div className="w-16 h-16 rounded-2xl bg-red-50 dark:bg-red-500/10 border border-red-500/20 text-red-500 flex items-center justify-center group-hover:bg-emerald-500/10 group-hover:border-emerald-500/50 group-hover:text-emerald-400 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-500">
+                   <div className="w-16 h-16 rounded-2xl bg-red-50 dark:bg-red-500/10 border border-red-500/20 text-red-500 flex items-center justify-center group-hover:bg-emerald-500/10 group-hover:border-emerald-500/50 group-hover:text-emerald-400 group-hover:shadow-[0_0_10px_rgba(16,185,129,0.4)] transition-all duration-500">
                       <Wrench className="w-8 h-8 group-hover:drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
                    </div>
                    <div>
@@ -655,7 +655,7 @@ export default function IslamWareLandingPro() {
             {/* --- La Timeline à gauche --- */}
             <div>
               <h2 className="text-3xl lg:text-4xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
-                {lang === 'ar' ? <>تصميم <span className="text-emerald-500 drop-shadow-[0_0_25px_rgba(16,185,129,0.7)]">بوعي</span></> : <>Design with <span className="text-emerald-500 drop-shadow-[0_0_25px_rgba(16,185,129,0.7)]">Conscience</span></>}
+                {lang === 'ar' ? <>تصميم <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">بوعي</span></> : <>Design with <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">Conscience</span></>}
               </h2>
               <p className="text-slate-600 dark:text-slate-400 text-lg mb-10 leading-relaxed">
                 {t.process.desc}
@@ -676,7 +676,7 @@ export default function IslamWareLandingPro() {
                     <div className="relative flex-shrink-0 hidden sm:block mt-1">
                       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center relative z-10 transition-all duration-500 border ${
                         isActive 
-                        ? 'bg-emerald-950/80 border-emerald-400 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.3)]' 
+                        ? 'bg-green-600 dark:bg-green-700 text-white  border-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.3)]' 
                         : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-500 group-hover:border-emerald-500/30 group-hover:text-emerald-500/70'
                       }`}>
                         <Icon className={`w-6 h-6 transition-all duration-300 ${isActive ? 'drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]' : ''}`} />
@@ -696,7 +696,7 @@ export default function IslamWareLandingPro() {
 
                       <div className="flex items-center gap-3 mb-2 relative z-10">
                          {/* Icône mobile uniquement */}
-                         <div className={`sm:hidden w-8 h-8 rounded-lg flex items-center justify-center ${isActive ? 'bg-emerald-500/20 text-emerald-400' : 'bg-slate-800 text-slate-400'}`}>
+                         <div className={`sm:hidden w-8 h-8 rounded-lg flex items-center justify-center ${isActive ? 'bg-emerald-500/20 text-emerald-400' : 'bg-green-600 text-slate-100'}`}>
                             <Icon className="w-4 h-4" />
                          </div>
                          
@@ -717,25 +717,6 @@ export default function IslamWareLandingPro() {
                               {step.desc}
                             </p>
 
-                            {/* Mini Illustration SaaS Néon
-                            <div className="h-16 w-full max-w-sm rounded-lg bg-white/80 dark:bg-slate-950/80 border border-emerald-500/20 flex items-center p-3 gap-4 relative overflow-hidden shadow-inner">
-                               <div className="absolute top-1/2 -left-6 w-12 h-12 bg-emerald-500/30 rounded-full blur-xl -translate-y-1/2 pointer-events-none" />
-                               <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded bg-emerald-500/10 border border-emerald-500/30">
-                                 {idx === 0 && <Search className="w-4 h-4 text-emerald-500 drop-shadow-[0_0_5px_rgba(16,185,129,0.5)]" />}
-                                 {idx === 1 && <Layout className="w-4 h-4 text-emerald-500 drop-shadow-[0_0_5px_rgba(16,185,129,0.5)]" />}
-                                 {idx === 2 && <Code className="w-4 h-4 text-emerald-500 drop-shadow-[0_0_5px_rgba(16,185,129,0.5)]" />}
-                                 {idx === 3 && <Rocket className="w-4 h-4 text-emerald-500 drop-shadow-[0_0_5px_rgba(16,185,129,0.5)]" />}
-                               </div>
-                               <div className="flex-1 space-y-2 opacity-90">
-                                  <div className="flex justify-between items-center mb-1">
-                                     <div className="h-1.5 w-1/3 bg-slate-200 dark:bg-slate-700 rounded-full" />
-                                     <div className="text-[9px] font-mono text-emerald-500 font-bold tracking-widest animate-pulse">ACTIVE</div>
-                                  </div>
-                                  <div className="h-1.5 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
-                                     <motion.div initial={{ width: 0 }} animate={{ width: idx === 3 ? '100%' : '65%' }} transition={{ duration: 1, delay: 0.2 }} className="h-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.9)] rounded-full relative" />
-                                  </div>
-                               </div>
-                            </div> */}
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -775,7 +756,7 @@ export default function IslamWareLandingPro() {
               <Sparkles className="w-4 h-4" />
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 text-slate-900 dark:text-white tracking-tight">
-              {lang === 'ar' ? <><span className="text-emerald-500 drop-shadow-[0_0_25px_rgba(16,185,129,0.7)]">العقول</span> وراء المهمة</> : <>Meet the <span className="text-emerald-500 drop-shadow-[0_0_25px_rgba(16,185,129,0.7)]">Founders</span></>}
+              {lang === 'ar' ? <><span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">العقول</span> وراء المهمة</> : <>Meet the <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">Founders</span></>}
             </h2>
             <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed px-4">
               {lang === 'ar' 
@@ -953,7 +934,7 @@ export default function IslamWareLandingPro() {
               {lang === 'ar' ? 'رحلة العميل' : 'How We Work'}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white tracking-tight">
-              {lang === 'ar' ? <>من الفكرة إلى <span className="text-emerald-500 drop-shadow-[0_0_25px_rgba(16,185,129,0.7)]">الإطلاق</span></> : <>From First Call to <span className="text-emerald-500 drop-shadow-[0_0_25px_rgba(16,185,129,0.7)]">Launch</span></>}
+              {lang === 'ar' ? <>من الفكرة إلى <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">الإطلاق</span></> : <>From First Call to <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">Launch</span></>}
             </h2>
             <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed px-4">
               {lang === 'ar'
