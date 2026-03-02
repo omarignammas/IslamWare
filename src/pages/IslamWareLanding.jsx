@@ -1430,8 +1430,8 @@ export default function IslamWareLandingPro() {
         <div className="relative pt-8 sm:pt-11 pb-8 sm:pb-12 text-center z-10">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[600px] h-[200px] sm:h-[250px] bg-emerald-500/10 blur-[100px] sm:blur-[120px] rounded-full pointer-events-none" />
           <h2 className="text-[75px] sm:text-[80px] md:text-[120px] lg:text-[140px] font-black tracking-tighter leading-none select-none relative" style={{ WebkitMaskImage: 'linear-gradient(to bottom, transparent 10%, black 50%)' }}>
-            <span className="text-slate-300 dark:text-slate-500/40">Islam</span>
-            <span className="text-emerald-400 dark:text-emerald-600 dark:drop-shadow-[0_0_8px_rgba(16,185,129,0.4)]">Ware</span>
+            <span className="text-slate-400 dark:text-slate-400/40">Islam</span>
+            <span className="text-emerald-400 dark:text-emerald-600 drop-shadow-[0_0_8px_rgba(16,185,129,0.4)]">Ware</span>
           </h2>
         </div>
 
