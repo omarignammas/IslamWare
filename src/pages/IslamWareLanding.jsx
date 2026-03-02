@@ -655,7 +655,7 @@ export default function IslamWareLandingPro() {
             {/* --- La Timeline à gauche --- */}
             <div>
               <h2 className="text-3xl lg:text-4xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
-                {lang === 'ar' ? <>تصميم <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">بوعي</span></> : <>Design with <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">Conscience</span></>}
+                {lang === 'ar' ? <>تصميم <span className="text-emerald-500 drop-shadow-[0_0_5px_rgba(16,185,129,0.7)]">بوعي</span></> : <>Design with <span className="text-emerald-500 drop-shadow-[0_0_5px_rgba(16,185,129,0.7)]">Conscience</span></>}
               </h2>
               <p className="text-slate-600 dark:text-slate-400 text-lg mb-10 leading-relaxed">
                 {t.process.desc}
@@ -676,14 +676,14 @@ export default function IslamWareLandingPro() {
                     <div className="relative flex-shrink-0 hidden sm:block mt-1">
                       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center relative z-10 transition-all duration-500 border ${
                         isActive 
-                        ? 'bg-green-600 dark:bg-green-600 text-white  border-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.3)]' 
+                        ? 'bg-emerald-600 dark:bg-emerald-600 text-white  border-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.3)]' 
                         : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-500 group-hover:border-emerald-500/30 group-hover:text-emerald-500/70'
                       }`}>
-                        <Icon className={`w-6 h-6 transition-all duration-300 ${isActive ? 'drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]' : ''}`} />
+                        <Icon className={`w-6 h-6 transition-all duration-300 ${isActive ? 'drop-shadow-[0_0_9px_rgba(16,185,129,0.8)]' : ''}`} />
                       </div>
                       
                       {/* Aura brillante derrière l'icône active */}
-                      {isActive && <div className="absolute top-6/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-emerald-500/40 rounded-full blur-md -z-10" />}
+                      {isActive && <div className="absolute top-4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-emerald-500/40 rounded-full blur-md -z-10" />}
                     </div>
 
                     {/* Carte de contenu (Titre + Description + Mini UI) */}
@@ -696,7 +696,7 @@ export default function IslamWareLandingPro() {
 
                       <div className="flex items-center gap-3 mb-2 relative z-10">
                          {/* Icône mobile uniquement */}
-                         <div className={`sm:hidden w-8 h-8 rounded-lg flex items-center justify-center ${isActive ? 'bg-emerald-500/20 text-emerald-400' : 'dark:bg-green-700 bg-green-600 text-slate-100'}`}>
+                         <div className={`sm:hidden w-8 h-8 rounded-lg flex items-center justify-center ${isActive ? 'bg-emerald-500/20 text-emerald-400' : 'dark:bg-emerald-600 bg-emerald-500 text-slate-100'}`}>
                             <Icon className="w-4 h-4" />
                          </div>
                          
