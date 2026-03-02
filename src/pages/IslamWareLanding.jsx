@@ -358,7 +358,7 @@ export default function IslamWareLandingPro() {
             <div className="inline-flex items-center p-1.5 bg-slate-200/80 dark:bg-slate-900/80 backdrop-blur-sm rounded-full border border-slate-300 dark:border-slate-700 relative z-20 shadow-lg">
                <button 
                  onClick={() => setCompareMode('legacy')}
-                 className={`relative px-4 sm:px-8 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${compareMode === 'legacy' ? 'text-red-700 dark:text-red-300' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
+                 className={`relative px-4 sm:px-8 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 ${compareMode === 'legacy' ? 'text-red-600 dark:text-red-400' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
                >
                  {compareMode === 'legacy' && <motion.div layoutId="compareBg" className="absolute inset-0 bg-white dark:bg-slate-800 rounded-full shadow-lg border border-red-200 dark:border-red-900/50 -z-10" />}
                  <span className="flex items-center gap-1.5"><AlertTriangle className="w-3.5 h-3.5" /> {t.compare.legacyTitle}</span>
@@ -375,7 +375,7 @@ export default function IslamWareLandingPro() {
 
           {/* Dynamic Content Card */}
           <div className={`relative rounded-3xl overflow-hidden bg-white dark:bg-slate-950 shadow-2xl min-h-[440px] transition-all duration-700 ${
-            compareMode === 'legacy' 
+            compareMode === 'legacy'  
               ? 'border border-red-200/50 dark:border-red-900/30 shadow-red-500/5' 
               : 'border border-emerald-200/50 dark:border-emerald-900/30 shadow-emerald-500/10'
           }`}>
@@ -404,9 +404,9 @@ export default function IslamWareLandingPro() {
                         </div>
                         
                         {/* Legacy Terminal Mockup */}
-                        <div className="bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+                        <div className="bg-white dark:bg-slate-950 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-2xl">
                           {/* Terminal header */}
-                          <div className="flex items-center gap-2 px-4 py-3 bg-slate-900 border-b border-slate-800">
+                          <div className="flex items-center gap-2 px-4 py-3 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
                             <div className="w-3 h-3 rounded-full bg-red-500" />
                             <div className="w-3 h-3 rounded-full bg-yellow-500" />
                             <div className="w-3 h-3 rounded-full bg-green-500" />
@@ -414,16 +414,16 @@ export default function IslamWareLandingPro() {
                           </div>
                           {/* Terminal body */}
                           <div className="p-5 font-mono text-xs space-y-3">
-                            <div className="flex gap-2"><span className="text-red-500">ERR</span><span className="text-slate-500">{lang === 'ar' ? 'خطأ 500: تجاوز الميزانية' : 'Error 500: Budget Exceeded'}</span></div>
-                            <div className="flex gap-2"><span className="text-red-500">ERR</span><span className="text-slate-500">{lang === 'ar' ? 'انتهاك أمني: بيانات مكشوفة' : 'Security breach: Data exposed'}</span></div>
-                            <div className="flex gap-2"><span className="text-yellow-500">WRN</span><span className="text-slate-500">{lang === 'ar' ? 'وقت التوقف: ١٢ ساعة' : 'Downtime: 12h unresolved'}</span></div>
-                            <div className="flex gap-2"><span className="text-red-500">ERR</span><span className="text-slate-500">{lang === 'ar' ? 'اعتماد على مورد واحد' : 'Vendor lock-in detected'}</span></div>
-                            <div className="h-px bg-slate-800 my-2" />
+                            <div className="flex gap-2"><span className="text-red-500">ERR</span><span className="text-slate-600 dark:text-slate-500">{lang === 'ar' ? 'خطأ 500: تجاوز الميزانية' : 'Error 500: Budget Exceeded'}</span></div>
+                            <div className="flex gap-2"><span className="text-red-500">ERR</span><span className="text-slate-600 dark:text-slate-500">{lang === 'ar' ? 'انتهاك أمني: بيانات مكشوفة' : 'Security breach: Data exposed'}</span></div>
+                            <div className="flex gap-2"><span className="text-yellow-500">WRN</span><span className="text-slate-600 dark:text-slate-500">{lang === 'ar' ? 'وقت التوقف: ١٢ ساعة' : 'Downtime: 12h unresolved'}</span></div>
+                            <div className="flex gap-2"><span className="text-red-500">ERR</span><span className="text-slate-600 dark:text-slate-500">{lang === 'ar' ? 'اعتماد على مورد واحد' : 'Vendor lock-in detected'}</span></div>
+                            <div className="h-px bg-slate-200 dark:bg-slate-800 my-2" />
                             {/* Metric bars */}
                             <div className="space-y-2 pt-1">
-                              <div><span className="text-slate-600 w-20 inline-block">{lang === 'ar' ? 'الأداء' : 'Uptime'}</span><span className="text-red-500 ml-2">62%</span><div className="w-full h-1.5 bg-slate-800 rounded-full mt-1"><div className="w-[62%] h-full bg-red-500 rounded-full shadow-[0_0_8px_rgba(239,68,68,0.6)]" /></div></div>
-                              <div><span className="text-slate-600 w-20 inline-block">{lang === 'ar' ? 'الأمان' : 'Security'}</span><span className="text-yellow-500 ml-2">41%</span><div className="w-full h-1.5 bg-slate-800 rounded-full mt-1"><div className="w-[41%] h-full bg-yellow-500 rounded-full shadow-[0_0_8px_rgba(234,179,8,0.6)]" /></div></div>
-                              <div><span className="text-slate-600 w-20 inline-block">{lang === 'ar' ? 'الشفافية' : 'Transp.'}</span><span className="text-red-500 ml-2">18%</span><div className="w-full h-1.5 bg-slate-800 rounded-full mt-1"><div className="w-[18%] h-full bg-red-500 rounded-full shadow-[0_0_8px_rgba(239,68,68,0.6)]" /></div></div>
+                              <div><span className="text-slate-500 dark:text-slate-600 w-20 inline-block">{lang === 'ar' ? 'الأداء' : 'Uptime'}</span><span className="text-red-500 ml-2">62%</span><div className="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full mt-1"><div className="w-[62%] h-full bg-red-500 rounded-full shadow-[0_0_8px_rgba(239,68,68,0.6)]" /></div></div>
+                              <div><span className="text-slate-500 dark:text-slate-600 w-20 inline-block">{lang === 'ar' ? 'الأمان' : 'Security'}</span><span className="text-yellow-500 ml-2">41%</span><div className="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full mt-1"><div className="w-[41%] h-full bg-yellow-500 rounded-full shadow-[0_0_8px_rgba(234,179,8,0.6)]" /></div></div>
+                              <div><span className="text-slate-500 dark:text-slate-600 w-20 inline-block">{lang === 'ar' ? 'الشفافية' : 'Transp.'}</span><span className="text-red-500 ml-2">18%</span><div className="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full mt-1"><div className="w-[18%] h-full bg-red-500 rounded-full shadow-[0_0_8px_rgba(239,68,68,0.6)]" /></div></div>
                             </div>
                           </div>
                         </div>
