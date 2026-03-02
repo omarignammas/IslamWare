@@ -222,16 +222,16 @@ export default function IslamWareLandingPro() {
              <a href="#footer" className="hover:text-emerald-500 transition-colors">{t.nav.contact}</a>
           </div>
 
-          <div className="flex items-center mr-3 gap-2 sm:gap-3">
+          <div className="flex items-center mr-3 gap-2.5 sm:gap-3">
             {/* Lang Toggle */}
             <div className="flex items-center bg-slate-100 dark:bg-slate-900 rounded-full p-0.5 sm:p-1 border border-slate-200 dark:border-slate-800">
-               <button onClick={() => setLang('en')} className={`text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition-all ${lang === 'en' ? 'bg-white dark:bg-slate-800 shadow-sm text-emerald-500' : 'text-slate-500'}`}>EN</button>
-               <button onClick={() => setLang('ar')} className={`text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition-all ${lang === 'ar' ? 'bg-white dark:bg-slate-800 shadow-sm text-emerald-500' : 'text-slate-500'}`}>AR</button>
+               <button onClick={() => setLang('en')} className={`text-xs sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-1.5 rounded-full transition-all ${lang === 'en' ? 'bg-white dark:bg-slate-800 shadow-sm text-emerald-500' : 'text-slate-500'}`}>EN</button>
+               <button onClick={() => setLang('ar')} className={`text-xs sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-1.5 rounded-full transition-all ${lang === 'ar' ? 'bg-white dark:bg-slate-800 shadow-sm text-emerald-500' : 'text-slate-500'}`}>AR</button>
             </div>
 
             {/* Theme Toggle */}
-            <button onClick={toggleTheme} className="p-2 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-colors">
-              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            <button onClick={toggleTheme} className="p-2.5 sm:p-2 rounded-full bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-colors">
+              {isDark ? <Sun className="w-5 h-5 sm:w-4 sm:h-4" /> : <Moon className="w-5 h-5 sm:w-4 sm:h-4" />}
             </button>
             
             <a href="#footer" className="hidden lg:flex bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-emerald-500/20">
@@ -521,7 +521,7 @@ export default function IslamWareLandingPro() {
           </div>
 
           {/* Bento Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[220px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-auto md:auto-rows-[220px]">
              
              {/* WEB & MOBILE (Large Card with Infinite Tech Scroll) */}
              <motion.div whileHover={{ scale: 0.98 }} className="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 bg-slate-50 dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-white/5 relative overflow-hidden group hover:border-emerald-500/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition-all duration-500 flex flex-col">
@@ -612,7 +612,7 @@ export default function IslamWareLandingPro() {
              </motion.div>
 
              {/* SYSTEM RESCUE (Scanner Animation) - Wide Bottom Card */}
-             <motion.div whileHover={{ scale: 0.99 }} className="col-span-1 md:col-span-3 lg:col-span-4 row-span-1 bg-white dark:bg-slate-950 rounded-3xl p-8 border-2 border-dashed border-slate-300 dark:border-slate-800 flex flex-col md:flex-row items-center gap-8 justify-between hover:border-emerald-500 dark:hover:border-emerald-400 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] transition-all duration-500 cursor-pointer group overflow-hidden relative">
+             <motion.div whileHover={{ scale: 0.99 }} className="col-span-1 md:col-span-3 lg:col-span-4 md:row-span-1 bg-white dark:bg-slate-950 rounded-3xl p-6 sm:p-8 border-2 border-dashed border-slate-300 dark:border-slate-800 flex flex-col md:flex-row items-center gap-6 sm:gap-8 justify-between hover:border-emerald-500 dark:hover:border-emerald-400 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] transition-all duration-500 cursor-pointer group overflow-hidden relative">
                 
                 {/* Scanner Line Effect on Hover */}
                 <motion.div 
@@ -676,7 +676,7 @@ export default function IslamWareLandingPro() {
                     <div className="relative flex-shrink-0 hidden sm:block mt-1">
                       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center relative z-10 transition-all duration-500 border ${
                         isActive 
-                        ? 'bg-green-600 dark:bg-green-700 text-white  border-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.3)]' 
+                        ? 'bg-green-600 dark:bg-green-600 text-white  border-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.3)]' 
                         : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-500 group-hover:border-emerald-500/30 group-hover:text-emerald-500/70'
                       }`}>
                         <Icon className={`w-6 h-6 transition-all duration-300 ${isActive ? 'drop-shadow-[0_0_8px_rgba(16,185,129,0.8)]' : ''}`} />
@@ -696,13 +696,13 @@ export default function IslamWareLandingPro() {
 
                       <div className="flex items-center gap-3 mb-2 relative z-10">
                          {/* Icône mobile uniquement */}
-                         <div className={`sm:hidden w-8 h-8 rounded-lg flex items-center justify-center ${isActive ? 'bg-emerald-500/20 text-emerald-400' : 'bg-green-600 text-slate-100'}`}>
+                         <div className={`sm:hidden w-8 h-8 rounded-lg flex items-center justify-center ${isActive ? 'bg-emerald-500/20 text-emerald-400' : 'dark:bg-green-700 bg-green-600 text-slate-100'}`}>
                             <Icon className="w-4 h-4" />
                          </div>
                          
                          <h4 className={`text-xl font-bold transition-all duration-300 ${
                            isActive 
-                           ? 'text-emerald-600 dark:text-emerald-400 drop-shadow-[0_0_5px_rgba(16,185,129,0.2)]' 
+                           ? 'text-emerald-600  dark:text-emerald-400 drop-shadow-[0_0_5px_rgba(16,185,129,0.2)]' 
                            : 'text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white'
                          }`}>
                            {step.title}
