@@ -102,6 +102,9 @@ export default function IslamWareLandingPro() {
   const [formStep, setFormStep] = useState('initial');
   const [email, setEmail] = useState('');
   const formRef = useRef(null);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectedTime] = useState('');
+  const [calMonth, setCalMonth] = useState(() => { const d = new Date(); return new Date(d.getFullYear(), d.getMonth(), 1); });
   const [compareMode, setCompareMode] = useState('islamware'); 
   const [activeProcess, setActiveProcess] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -739,184 +742,6 @@ export default function IslamWareLandingPro() {
         </div>
       </section>
 
-      {/* ========================================= */}
-      {/* 6. TEAM SECTION — The Founding Team */}
-      {/* ========================================= */}
-      <section id="team" className="py-24 sm:py-32 bg-white dark:bg-slate-950 relative overflow-hidden transition-colors">
-        {/* Background decoration */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-teal-500/5 rounded-full blur-[120px] pointer-events-none" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          {/* Section Header */}
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16 sm:mb-20">
-            <span className="inline-flex items-center gap-2 text-emerald-500 font-bold tracking-widest uppercase text-xs sm:text-sm mb-4">
-              <Sparkles className="w-4 h-4" />
-              {lang === 'ar' ? 'الفريق المؤسس' : 'The Founding Team'}
-              <Sparkles className="w-4 h-4" />
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 text-slate-900 dark:text-white tracking-tight">
-              {lang === 'ar' ? <><span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">العقول</span> وراء المهمة</> : <>Meet the <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">Founders</span></>}
-            </h2>
-            <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed px-4">
-              {lang === 'ar' 
-                ? 'ثلاثة مؤسسين يجمعهم شغف التكنولوجيا الأخلاقية والابتكار المسؤول وبناء برمجيات تخدم الإنسانية.'
-                : 'Three co-founders united by a shared passion for ethical technology, transparent engineering, and building software that serves humanity.'}
-            </p>
-          </motion.div>
-
-          {/* Founder Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-            {[
-              { 
-                name: "Omar Ignammas",
-                role: "CTO & Co-Founder",
-                roleAr: "الرئيس التنفيذي والمؤسس المشارك",
-                bio: "Software Engineer and GenAI Developer.",
-                bioAr: "مهندس برمجيات ومطور ذكاء اصطناعي توليدي.",
-                expertise: ["Architecture", "AI / ML", "Tech Mentorship"],
-                expertiseAr: ["الهندسة المعمارية", "الذكاء الاصطناعي", "التدريب التقني"],
-                linkedin: "https://www.linkedin.com/in/omar-ignammas-26b62b239",
-                email: "omar.ignammas2003@gmail.com",
-                initial: "OI",
-                img: omarImg,
-                gradient: "from-emerald-500 to-teal-600"
-              },
-              { 
-                name: "Yahya Kaddouri",
-                role: "CEO & Co-Founder",
-                roleAr: "مدير العمليات والمؤسس المشارك",
-                bio: "Data Scientist and AI/ML Researcher.",
-                bioAr: "عالم بيانات وباحث في الذكاء الاصطناعي وتعلم الآلة.",
-                expertise: ["Strategy", "Business Dev", "Product Vision"],
-                expertiseAr:["الاستراتيجية", "تطوير الأعمال", "رؤية المنتج"],
-                linkedin: "https://www.linkedin.com/in/yahyakaddouri/",
-                email: "kaddouriyahya20@gmail.com",
-                initial: "YK",
-                img: yahyaImg,
-                gradient: "from-teal-500 to-cyan-600"
-              },
-              { 
-                name: "Abdelhamid Hachimi-Allaoui",
-                role: "COO & Co-Founder",
-                roleAr: "المدير التقني والمؤسس المشارك",
-                bio: "Software Engineer and IOT Systems Developer.",
-                bioAr: "مهندس برمجيات وتطبيقات محمولة ومطور أنظمة إنترنت الأشياء (IoT).",
-                expertise: ["Operations", "Agile Delivery", "Client Success"],
-                expertiseAr: ["العمليات", "التسليم الرشيق", "نجاح العملاء"],
-                linkedin: "https://www.linkedin.com/in/abdelhamid-hachimi-alaoui-b45288243/",
-                email: "abdelhamid.hachimi-alaoui@uit.ac.ma",
-                initial: "AH",
-                img: abdelhamidImg,
-                gradient: "from-emerald-600 to-green-700"
-              }
-            ].map((member, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 50 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                viewport={{ once: true }} 
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative"
-              >
-                <div className="relative bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-lg hover:shadow-2xl dark:hover:shadow-[0_20px_60px_rgba(16,185,129,0.15)] transition-all duration-500">
-                  
-                  {/* Gradient header band */}
-                  <div className={`h-28 sm:h-32 bg-gradient-to-br ${member.gradient} relative overflow-hidden`}>
-                    {/* Animated pattern overlay */}
-                    <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 1px, transparent 1px), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-                    {/* Shine effect on hover */}
-                    <motion.div animate={{ x: ['-150%', '250%'] }} transition={{ duration: 4, repeat: Infinity, ease: "linear", repeatDelay: 3 }} className="absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12" />
-                    
-                    {/* Role badge on header */}
-                    <div className="absolute top-4 right-4">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-white/80 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20">
-                        {lang === 'ar' ? member.roleAr?.split(' ')[0] : member.role.split(' ')[0]}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* Avatar */}
-                  <div className="flex justify-center -mt-14 sm:-mt-16 relative z-10">
-                    <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-white dark:border-slate-900 shadow-xl overflow-hidden group-hover:border-emerald-400 dark:group-hover:border-emerald-500 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all duration-500">
-                      <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
-                    </div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="p-6 sm:p-8 pt-4 text-center">
-                    <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white mb-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                      {member.name}
-                    </h3>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 dark:text-emerald-400 mb-4">
-                      {lang === 'ar' ? member.roleAr : member.role}
-                    </span>
-                    
-                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-                      {lang === 'ar' ? member.bioAr : member.bio}
-                    </p>
-                    
-                    {/* Expertise tags */}
-                    <div className="flex flex-wrap justify-center gap-2 mb-6">
-                      {(lang === 'ar' ? member.expertiseAr : member.expertise).map((skill, j) => (
-                        <motion.span 
-                          key={j} 
-                          initial={{ opacity: 0, scale: 0.8 }} 
-                          whileInView={{ opacity: 1, scale: 1 }} 
-                          viewport={{ once: true }} 
-                          transition={{ delay: i * 0.1 + j * 0.05 }}
-                          className="text-[11px] font-semibold px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/50 group-hover:border-emerald-300 dark:group-hover:border-emerald-700 transition-colors"
-                        >
-                          {skill}
-                        </motion.span>
-                      ))}
-                    </div>
-                    
-                    {/* Social links */}
-                    <div className="flex items-center justify-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
-                      <a href={member.linkedin} className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-emerald-500 transition-colors group/link px-3 py-1.5 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-950/30">
-                        <Linkedin className="w-4 h-4" />
-                        <span className="text-xs font-medium">LinkedIn</span>
-                        <ExternalLink className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-opacity" />
-                      </a>
-                      <a href={`mailto:${member.email}`} className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-emerald-500 transition-colors px-3 py-1.5 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-950/30">
-                        <Mail className="w-4 h-4" />
-                        <span className="text-xs font-medium">Email</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Mission Statement Under Team */}
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mt-16 sm:mt-20">
-            <div className="relative bg-gradient-to-br from-emerald-50 via-white to-teal-50 dark:from-emerald-950/20 dark:via-slate-900 dark:to-teal-950/20 rounded-3xl border border-emerald-100 dark:border-emerald-900/30 p-8 sm:p-12 text-center overflow-hidden">
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#10b98108_1px,transparent_1px),linear-gradient(to_bottom,#10b98108_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
-              <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 mb-4 text-emerald-600 dark:text-emerald-400">
-                  <Heart className="w-5 h-5" />
-                  <span className="text-sm font-bold uppercase tracking-wider">
-                    {lang === 'ar' ? 'مهمتنا' : 'Our Mission'}
-                  </span>
-                </div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 max-w-3xl mx-auto leading-tight">
-                  {lang === 'ar' 
-                    ? '"نؤمن أن التكنولوجيا يجب أن تخدم الإنسان أولاً — بشفافية واحترام وأخلاق."'
-                    : '"We believe technology should serve people first — with transparency, respect, and unwavering ethics."'}
-                </h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-                  {lang === 'ar'
-                    ? '— الفريق المؤسس لإسلام وير'
-                    : '— The Founding Team at IslamWare'}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* ========================================= */}
       {/* 7. CLIENT JOURNEY PIPELINE — SaaS Style  */}
@@ -1420,6 +1245,185 @@ export default function IslamWareLandingPro() {
         </div>
       </section>
 
+      {/* ========================================= */}
+      {/* 6. TEAM SECTION — The Founding Team */}
+      {/* ========================================= */}
+      <section id="team" className="py-24 sm:py-32 bg-white dark:bg-slate-950 relative overflow-hidden transition-colors">
+        {/* Background decoration */}
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-teal-500/5 rounded-full blur-[120px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          {/* Section Header */}
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16 sm:mb-20">
+            <span className="inline-flex items-center gap-2 text-emerald-500 font-bold tracking-widest uppercase text-xs sm:text-sm mb-4">
+              <Sparkles className="w-4 h-4" />
+              {lang === 'ar' ? 'الفريق المؤسس' : 'The Founding Team'}
+              <Sparkles className="w-4 h-4" />
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 text-slate-900 dark:text-white tracking-tight">
+              {lang === 'ar' ? <><span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">العقول</span> وراء المهمة</> : <>Meet the <span className="text-emerald-500 drop-shadow-[0_0_6px_rgba(16,185,129,0.7)]">Founders</span></>}
+            </h2>
+            <p className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed px-4">
+              {lang === 'ar' 
+                ? 'ثلاثة مؤسسين يجمعهم شغف التكنولوجيا الأخلاقية والابتكار المسؤول وبناء برمجيات تخدم الإنسانية.'
+                : 'Three co-founders united by a shared passion for ethical technology, transparent engineering, and building software that serves humanity.'}
+            </p>
+          </motion.div>
+
+          {/* Founder Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+            {[
+              { 
+                name: "Omar Ignammas",
+                role: "CTO & Co-Founder",
+                roleAr: "الرئيس التنفيذي والمؤسس المشارك",
+                bio: "Software Engineer and GenAI Developer.",
+                bioAr: "مهندس برمجيات ومطور ذكاء اصطناعي توليدي.",
+                expertise: ["Architecture", "AI / ML", "Tech Mentorship"],
+                expertiseAr: ["الهندسة المعمارية", "الذكاء الاصطناعي", "التدريب التقني"],
+                linkedin: "https://www.linkedin.com/in/omar-ignammas-26b62b239",
+                email: "omar.ignammas2003@gmail.com",
+                initial: "OI",
+                img: omarImg,
+                gradient: "from-emerald-500 to-teal-600"
+              },
+              { 
+                name: "Yahya Kaddouri",
+                role: "CEO & Co-Founder",
+                roleAr: "مدير العمليات والمؤسس المشارك",
+                bio: "Data Scientist and AI/ML Researcher.",
+                bioAr: "عالم بيانات وباحث في الذكاء الاصطناعي وتعلم الآلة.",
+                expertise: ["Strategy", "Business Dev", "Product Vision"],
+                expertiseAr:["الاستراتيجية", "تطوير الأعمال", "رؤية المنتج"],
+                linkedin: "https://www.linkedin.com/in/yahyakaddouri/",
+                email: "kaddouriyahya20@gmail.com",
+                initial: "YK",
+                img: yahyaImg,
+                gradient: "from-teal-500 to-cyan-600"
+              },
+              { 
+                name: "Abdelhamid Hachimi-Allaoui",
+                role: "COO & Co-Founder",
+                roleAr: "المدير التقني والمؤسس المشارك",
+                bio: "Software Engineer and IOT Systems Developer.",
+                bioAr: "مهندس برمجيات وتطبيقات محمولة ومطور أنظمة إنترنت الأشياء (IoT).",
+                expertise: ["Operations", "Agile Delivery", "Client Success"],
+                expertiseAr: ["العمليات", "التسليم الرشيق", "نجاح العملاء"],
+                linkedin: "https://www.linkedin.com/in/abdelhamid-hachimi-alaoui-b45288243/",
+                email: "abdelhamid.hachimi-alaoui@uit.ac.ma",
+                initial: "AH",
+                img: abdelhamidImg,
+                gradient: "from-emerald-600 to-green-700"
+              }
+            ].map((member, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 50 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group relative"
+              >
+                <div className="relative bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-lg hover:shadow-2xl dark:hover:shadow-[0_20px_60px_rgba(16,185,129,0.15)] transition-all duration-500">
+                  
+                  {/* Gradient header band */}
+                  <div className={`h-28 sm:h-32 bg-gradient-to-br ${member.gradient} relative overflow-hidden`}>
+                    {/* Animated pattern overlay */}
+                    <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 1px, transparent 1px), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
+                    {/* Shine effect on hover */}
+                    <motion.div animate={{ x: ['-150%', '250%'] }} transition={{ duration: 4, repeat: Infinity, ease: "linear", repeatDelay: 3 }} className="absolute top-0 bottom-0 w-1/3 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12" />
+                    
+                    {/* Role badge on header */}
+                    <div className="absolute top-4 right-4">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-white/80 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20">
+                        {lang === 'ar' ? member.roleAr?.split(' ')[0] : member.role.split(' ')[0]}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Avatar */}
+                  <div className="flex justify-center -mt-14 sm:-mt-16 relative z-10">
+                    <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-white dark:border-slate-900 shadow-xl overflow-hidden group-hover:border-emerald-400 dark:group-hover:border-emerald-500 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all duration-500">
+                      <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6 sm:p-8 pt-4 text-center">
+                    <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white mb-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                      {member.name}
+                    </h3>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600 dark:text-emerald-400 mb-4">
+                      {lang === 'ar' ? member.roleAr : member.role}
+                    </span>
+                    
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
+                      {lang === 'ar' ? member.bioAr : member.bio}
+                    </p>
+                    
+                    {/* Expertise tags */}
+                    <div className="flex flex-wrap justify-center gap-2 mb-6">
+                      {(lang === 'ar' ? member.expertiseAr : member.expertise).map((skill, j) => (
+                        <motion.span 
+                          key={j} 
+                          initial={{ opacity: 0, scale: 0.8 }} 
+                          whileInView={{ opacity: 1, scale: 1 }} 
+                          viewport={{ once: true }} 
+                          transition={{ delay: i * 0.1 + j * 0.05 }}
+                          className="text-[11px] font-semibold px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/50 group-hover:border-emerald-300 dark:group-hover:border-emerald-700 transition-colors"
+                        >
+                          {skill}
+                        </motion.span>
+                      ))}
+                    </div>
+                    
+                    {/* Social links */}
+                    <div className="flex items-center justify-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+                      <a href={member.linkedin} className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-emerald-500 transition-colors group/link px-3 py-1.5 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-950/30">
+                        <Linkedin className="w-4 h-4" />
+                        <span className="text-xs font-medium">LinkedIn</span>
+                        <ExternalLink className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                      </a>
+                      <a href={`mailto:${member.email}`} className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-emerald-500 transition-colors px-3 py-1.5 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-950/30">
+                        <Mail className="w-4 h-4" />
+                        <span className="text-xs font-medium">Email</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mission Statement Under Team */}
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mt-16 sm:mt-20">
+            <div className="relative bg-gradient-to-br from-emerald-50 via-white to-teal-50 dark:from-emerald-950/20 dark:via-slate-900 dark:to-teal-950/20 rounded-3xl border border-emerald-100 dark:border-emerald-900/30 p-8 sm:p-12 text-center overflow-hidden">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#10b98108_1px,transparent_1px),linear-gradient(to_bottom,#10b98108_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 mb-4 text-emerald-600 dark:text-emerald-400">
+                  <Heart className="w-5 h-5" />
+                  <span className="text-sm font-bold uppercase tracking-wider">
+                    {lang === 'ar' ? 'مهمتنا' : 'Our Mission'}
+                  </span>
+                </div>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 max-w-3xl mx-auto leading-tight">
+                  {lang === 'ar' 
+                    ? '"نؤمن أن التكنولوجيا يجب أن تخدم الإنسان أولاً — بشفافية واحترام وأخلاق."'
+                    : '"We believe technology should serve people first — with transparency, respect, and unwavering ethics."'}
+                </h3>
+                <p className="text-slate-500 dark:text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+                  {lang === 'ar'
+                    ? '— الفريق المؤسس لإسلام وير'
+                    : '— The Founding Team at IslamWare'}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* FOOTER — Professional SaaS Footer */}
       <footer id="footer" className="relative bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-white/5 overflow-hidden transition-colors duration-300">
         {/* Giant brand watermark */}
@@ -1442,18 +1446,181 @@ export default function IslamWareLandingPro() {
                        <h4 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white mb-2">{t.footer.build}</h4>
                        <p className="text-slate-600 dark:text-slate-400 text-sm max-w-sm">{t.footer.buildDesc}</p>
                     </div>
-                    <button onClick={() => setFormStep('input')} className="flex-shrink-0 flex items-center gap-3 bg-slate-50 dark:bg-slate-950 hover:bg-slate-100 text-slate-900 dark:text-white px-5 sm:px-6 py-3 rounded-full border border-emerald-200 dark:border-emerald-800 transition-all group hover:border-emerald-400 hover:shadow-lg">
+                    <button onClick={() => setFormStep('schedule')} className="flex-shrink-0 flex items-center gap-3 bg-slate-50 dark:bg-slate-950 hover:bg-slate-100 text-slate-900 dark:text-white px-5 sm:px-6 py-3 rounded-full border border-emerald-200 dark:border-emerald-800 transition-all group hover:border-emerald-400 hover:shadow-lg">
                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-500/30"><Calendar className="w-4 h-4 text-white" /></div>
                        <span className="font-medium text-emerald-600 dark:text-emerald-400 text-sm">{t.nav.book}</span>
                     </button>
                   </motion.div>
                 )}
-                {formStep === 'input' && (
-                  <motion.form ref={formRef} key="input" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} onSubmit={(e) => { e.preventDefault(); if(email) { emailjs.sendForm('service_35ip1n8', 'template_9phl1ci', formRef.current, { publicKey: 'AmMaHgQLxq3JZIxdu' }).then(() => { console.log('SUCCESS!'); }, (error) => { console.log('FAILED...', error.text); }); setFormStep('success'); e.target.reset(); } }} className="flex flex-col gap-4">
-                    <div className="text-center mb-2">
-                      <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{lang === 'ar' ? 'دعنا نتواصل' : "Let's Connect"}</h4>
-                      <p className="text-slate-500 dark:text-slate-400 text-sm">{lang === 'ar' ? 'لديك فكرة أو مشروع؟ تحدث إلينا!' : 'Have an idea or project in mind? Let\'s talk!'}</p>
+
+                {/* STEP 1: REAL CALENDAR + TIME PICKER */}
+                {formStep === 'schedule' && (
+                  <motion.div key="schedule" initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }} transition={{ duration: 0.3 }} className="flex flex-col gap-4">
+                    {/* Step indicator */}
+                    <div className="flex items-center justify-center gap-3 mb-1">
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center shadow-lg shadow-emerald-500/30">1</div>
+                        <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400">{lang === 'ar' ? 'الموعد' : 'Schedule'}</span>
+                      </div>
+                      <div className="w-8 h-px bg-slate-300 dark:bg-slate-700" />
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-400 text-xs font-bold flex items-center justify-center">2</div>
+                        <span className="text-xs font-medium text-slate-400">{lang === 'ar' ? 'المعلومات' : 'Details'}</span>
+                      </div>
                     </div>
+
+                    <div className="text-center">
+                      <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{lang === 'ar' ? 'اختر التاريخ والوقت' : 'Pick a Date & Time'}</h4>
+                      <p className="text-slate-500 dark:text-slate-400 text-sm">{lang === 'ar' ? 'اختر الموعد الأنسب لك' : 'Choose the most convenient time for you'}</p>
+                    </div>
+
+                    {/* Calendar */}
+                    {(() => {
+                      const today = new Date();
+                      today.setHours(0,0,0,0);
+                      const year = calMonth.getFullYear();
+                      const month = calMonth.getMonth();
+                      const firstDay = new Date(year, month, 1).getDay();
+                      const daysInMonth = new Date(year, month + 1, 0).getDate();
+                      const dayNames = lang === 'ar' 
+                        ? ['أح', 'اث', 'ثل', 'أر', 'خم', 'جم', 'سب']
+                        : ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+                      const monthLabel = calMonth.toLocaleDateString(lang === 'ar' ? 'ar-MA' : 'en-US', { month: 'long', year: 'numeric' });
+
+                      const cells = [];
+                      for (let i = 0; i < firstDay; i++) cells.push(null);
+                      for (let d = 1; d <= daysInMonth; d++) cells.push(d);
+
+                      return (
+                        <div className="bg-white dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-700 p-3 sm:p-4">
+                          {/* Month navigation */}
+                          <div className="flex items-center justify-between mb-3">
+                            <button type="button" onClick={() => setCalMonth(new Date(year, month - 1, 1))} className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 transition-colors">
+                              <ArrowLeft className="w-4 h-4" />
+                            </button>
+                            <span className="text-sm font-bold text-slate-800 dark:text-white">{monthLabel}</span>
+                            <button type="button" onClick={() => setCalMonth(new Date(year, month + 1, 1))} className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 transition-colors">
+                              <ArrowRight className="w-4 h-4" />
+                            </button>
+                          </div>
+
+                          {/* Day headers */}
+                          <div className="grid grid-cols-7 gap-1 mb-1">
+                            {dayNames.map(d => (
+                              <div key={d} className="text-center text-[10px] font-semibold text-slate-400 uppercase py-1">{d}</div>
+                            ))}
+                          </div>
+
+                          {/* Day cells */}
+                          <div className="grid grid-cols-7 gap-1">
+                            {cells.map((day, i) => {
+                              if (!day) return <div key={`empty-${i}`} />;
+                              const cellDate = new Date(year, month, day);
+                              const isPast = cellDate < today;
+                              const isSelected = selectedDate && selectedDate.getTime() === cellDate.getTime();
+                              const isToday = cellDate.getTime() === today.getTime();
+                              return (
+                                <button
+                                  key={day}
+                                  type="button"
+                                  disabled={isPast}
+                                  onClick={() => setSelectedDate(cellDate)}
+                                  className={`relative w-full aspect-[1.15] rounded-md text-[11px] sm:text-xs font-semibold flex items-center justify-center transition-all ${
+                                    isPast
+                                      ? 'text-slate-300 dark:text-slate-700 cursor-not-allowed'
+                                      : isSelected
+                                        ? 'bg-emerald-500 text-white shadow-md shadow-emerald-500/30 scale-105'
+                                        : isToday
+                                          ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-300 dark:border-emerald-700 hover:bg-emerald-100'
+                                          : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                                  }`}
+                                >
+                                  {day}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })()}
+
+                    {/* Time picker */}
+                    {selectedDate && (
+                      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-2">
+                        <label className="text-xs font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
+                          <Clock className="w-3.5 h-3.5" /> {lang === 'ar' ? 'اختر الوقت' : 'Select Time'}
+                        </label>
+                        <div className="grid grid-cols-4 sm:grid-cols-6 gap-2">
+                          {['09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00'].map(time => (
+                            <button
+                              key={time}
+                              type="button"
+                              onClick={() => setSelectedTime(time)}
+                              className={`py-2 px-1 rounded-lg text-xs font-bold text-center transition-all ${
+                                selectedTime === time
+                                  ? 'bg-emerald-500 text-white shadow-md shadow-emerald-500/30'
+                                  : 'bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-emerald-400 dark:hover:border-emerald-600'
+                              }`}
+                            >
+                              {time}
+                            </button>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+
+                    <div className="flex gap-3 pt-1">
+                      <button type="button" onClick={() => { setFormStep('initial'); setSelectedDate(null); setSelectedTime(''); }} className="px-5 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 font-medium text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                        {lang === 'ar' ? 'رجوع' : 'Back'}
+                      </button>
+                      <button
+                        type="button"
+                        disabled={!selectedDate || !selectedTime}
+                        onClick={() => setFormStep('input')}
+                        className={`flex-1 py-2.5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-all ${
+                          selectedDate && selectedTime
+                            ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg shadow-emerald-500/20 hover:from-emerald-500 hover:to-teal-500'
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-400 cursor-not-allowed'
+                        }`}
+                      >
+                        {lang === 'ar' ? 'التالي' : 'Next'}
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* STEP 2: CONTACT INFO */}
+                {formStep === 'input' && (
+                  <motion.form ref={formRef} key="input" initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }} transition={{ duration: 0.3 }} onSubmit={(e) => { e.preventDefault(); if(email) { emailjs.sendForm('service_35ip1n8', 'template_9phl1ci', formRef.current, { publicKey: 'AmMaHgQLxq3JZIxdu' }).then(() => { console.log('SUCCESS!'); }, (error) => { console.log('FAILED...', error.text); }); setFormStep('success'); e.target.reset(); } }} className="flex flex-col gap-4">
+                    {/* Step indicator */}
+                    <div className="flex items-center justify-center gap-3 mb-1">
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center">
+                          <Check className="w-3.5 h-3.5" />
+                        </div>
+                        <span className="text-xs font-medium text-emerald-600 dark:text-emerald-400">{lang === 'ar' ? 'الموعد' : 'Schedule'}</span>
+                      </div>
+                      <div className="w-8 h-px bg-emerald-500" />
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center shadow-lg shadow-emerald-500/30">2</div>
+                        <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400">{lang === 'ar' ? 'المعلومات' : 'Details'}</span>
+                      </div>
+                    </div>
+
+                    <div className="text-center mb-1">
+                      <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{lang === 'ar' ? 'معلومات التواصل' : 'Your Details'}</h4>
+                      {selectedDate && selectedTime && (
+                        <div className="inline-flex items-center gap-2 text-xs bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-3 py-1.5 rounded-full border border-emerald-200 dark:border-emerald-800">
+                          <Calendar className="w-3 h-3" />
+                          <span className="font-semibold">{selectedDate.toLocaleDateString(lang === 'ar' ? 'ar-MA' : 'en-US', { weekday: 'short', month: 'short', day: 'numeric' })} &middot; {selectedTime}</span>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Hidden field for schedule */}
+                    <input type="hidden" name="preferred_time" value={selectedDate ? `${selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })} at ${selectedTime}` : ''} />
+
                     <input 
                       autoFocus 
                       type="text" 
@@ -1473,15 +1640,20 @@ export default function IslamWareLandingPro() {
                     />
                     <textarea 
                       name="message" 
-                      rows={4}
+                      rows={3}
                       placeholder={lang === 'ar' ? 'رسالتك ...' : 'Your Message ...'}
                       className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all text-sm resize-none" 
                       required 
                     />
-                    <button type="submit" className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 group">
-                      {lang === 'ar' ? 'إرسال' : 'Get in Touch'}
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    <div className="flex gap-3">
+                      <button type="button" onClick={() => setFormStep('schedule')} className="px-5 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 font-medium text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                        {lang === 'ar' ? 'رجوع' : 'Back'}
+                      </button>
+                      <button type="submit" className="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white py-2.5 rounded-lg font-bold transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 group text-sm">
+                        {lang === 'ar' ? 'إرسال' : 'Send & Book'}
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
                   </motion.form>
                 )}
                 {formStep === 'success' && (
