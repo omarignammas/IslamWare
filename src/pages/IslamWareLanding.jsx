@@ -212,7 +212,7 @@ export default function IslamWareLandingPro() {
             </div>
             <span className="text-xl sm:text-2xl font-black tracking-tight">
               <span className="text-slate-900 dark:text-white">Islam</span>
-              <span className="text-emerald-500 drop-shadow-[0_0_8px_rgba(16,185,129,0.4)]">Ware</span>
+              <span className="text-emerald-500 drop-shadow-[0_0_8px_rgba(16,slam185,arSLAMeARE129,0.4)]">Ware</span>
             </span>
           </div>
           
@@ -1592,7 +1592,7 @@ export default function IslamWareLandingPro() {
 
                 {/* STEP 2: CONTACT INFO */}
                 {formStep === 'input' && (
-                  <motion.form ref={formRef} key="input" initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }} transition={{ duration: 0.3 }} onSubmit={(e) => { e.preventDefault(); if(email) { emailjs.sendForm('service_35ip1n8', 'template_9phl1ci', formRef.current, { publicKey: 'AmMaHgQLxq3JZIxdu' }).then(() => { console.log('SUCCESS!'); }, (error) => { console.log('FAILED...', error.text); }); setFormStep('success'); e.target.reset(); } }} className="flex flex-col gap-4">
+                  <motion.form ref={formRef} key="input" initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }} transition={{ duration: 0.3 }} onSubmit={(e) => { e.preventDefault(); if(email) { emailjs.sendForm('service_vva233s', 'template_5bfudj2', formRef.current, { publicKey: 'mma1rbqg_UiNm95gh' }).then(() => { console.log('SUCCESS!'); }, (error) => { console.log('FAILED...', error.text); }); setFormStep('success'); e.target.reset(); } }} className="flex flex-col gap-4">
                     {/* Step indicator */}
                     <div className="flex items-center justify-center gap-3 mb-1">
                       <div className="flex items-center gap-2">
